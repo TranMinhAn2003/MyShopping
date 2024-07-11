@@ -1,0 +1,87 @@
+.error-message{
+ color:red;
+    font-size: 12px;
+    font-style: italic;
+}
+.action{
+    width:500px;
+}
+.mr10{
+    margin-top:10px;
+}
+.js-switch{
+    width:10px;
+}
+
+.icon{
+    width:150px;
+}
+.hh{
+    margin-top: 100px;
+    font-size:15px;
+}
+.h{
+    font-size:15px;
+    margin-top: 10px;
+
+}
+.hr{
+    margin-bottom:20px;
+}
+.hf{
+    margin-top:10px;
+}
+.create{
+    margin-bottom:10px;
+}
+.active-bg{
+    background:#979797;
+}
+.meta_title{
+    color: rgb(26, 13, 171);
+    color-scheme :light;
+    cursor: pointer;
+    display :inline-block;
+    font-family :Arial, sans-serif;
+    font-size :20px;
+    font-weight :400;
+    height :52px;
+    line-height :26px;
+    margin-block-end :3px;
+    margin-block-start :18px;
+    margin-bottom :3px;
+    margin-inline-end :0px;
+    margin-inline-start :0px;
+    margin-left :0px;
+    margin-right :0px;
+    margin-top :18px;
+    padding-bottom :0px;
+    padding-left :0px;
+    padding-right :0px;
+    padding-top :5px;
+    text-align :left;
+    unicode-bidi :isolate;
+    width :428px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1)
+}
+.urllink {
+    color: green;
+    font-size: 12px;
+
+
+}
+.SEO{
+    margin-top:20px;
+}
+.image img {
+    width: 200px;
+    height: 200px;
+
+}
+.imge{
+    margin-left:12px;
+}
+.write{
+    margin-top:18px;
+}
+
