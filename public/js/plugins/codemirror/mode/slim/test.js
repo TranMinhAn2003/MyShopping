@@ -15,16 +15,16 @@
      "[tag h1] Hey There .h2");
 
   MT("idShortcut",
-     "[attribute&def #test] Hey There");
+     "[attributecatalogue&def #test] Hey There");
 
   MT("tagWithIdShortcuts",
-     "[tag h1][attribute&def #test] Hey There");
+     "[tag h1][attributecatalogue&def #test] Hey There");
 
   MT("classShortcut",
-     "[attribute&qualifier .hello] Hey There");
+     "[attributecatalogue&qualifier .hello] Hey There");
 
   MT("tagWithIdAndClassShortcuts",
-     "[tag h1][attribute&def #test][attribute&qualifier .hello] Hey There");
+     "[tag h1][attributecatalogue&def #test][attributecatalogue&qualifier .hello] Hey There");
 
   MT("docType",
      "[keyword doctype] xml");
@@ -36,11 +36,11 @@
      "[tag h1] This is not a / comment ");
 
   MT("attributes",
-     "[tag a]([attribute title]=[string \"test\"]) [attribute href]=[string \"link\"]}");
+     "[tag a]([attributecatalogue title]=[string \"test\"]) [attributecatalogue href]=[string \"link\"]}");
 
   MT("multiLineAttributes",
-     "[tag a]([attribute title]=[string \"test\"]",
-     "  ) [attribute href]=[string \"link\"]}");
+     "[tag a]([attributecatalogue title]=[string \"test\"]",
+     "  ) [attributecatalogue href]=[string \"link\"]}");
 
   MT("htmlCode",
      "[tag&bracket <][tag h1][tag&bracket >]Title[tag&bracket </][tag h1][tag&bracket >]");
@@ -49,7 +49,7 @@
      "[operator&special =][variable-2 @item]");
 
   MT("selectorRubyBlock",
-     "[tag a][attribute&qualifier .test][operator&special =] [variable-2 @item]");
+     "[tag a][attributecatalogue&qualifier .test][operator&special =] [variable-2 @item]");
 
   MT("nestedRubyBlock",
       "[tag a]",
@@ -78,19 +78,19 @@
       "  [comment Comment]");
 
   MT("hamlAfterRubyTag",
-    "[attribute&qualifier .block]",
+    "[attributecatalogue&qualifier .block]",
     "  [tag strong][operator&special =] [variable now]",
-    "  [attribute&qualifier .test]",
+    "  [attributecatalogue&qualifier .test]",
     "     [operator&special =][variable now]",
-    "  [attribute&qualifier .right]");
+    "  [attributecatalogue&qualifier .right]");
 
   MT("stretchedRuby",
      "[operator&special =] [variable puts] [string \"Hello\"],",
      "   [string \"World\"]");
 
   MT("interpolationInHashAttribute",
-     "[tag div]{[attribute id] = [string \"]#{[variable test]}[string _]#{[variable ting]}[string \"]} test");
+     "[tag div]{[attributecatalogue id] = [string \"]#{[variable test]}[string _]#{[variable ting]}[string \"]} test");
 
   MT("interpolationInHTMLAttribute",
-     "[tag div]([attribute title]=[string \"]#{[variable test]}[string _]#{[variable ting]()}[string \"]) Test");
+     "[tag div]([attributecatalogue title]=[string \"]#{[variable test]}[string _]#{[variable ting]()}[string \"]) Test");
 })();

@@ -2,11 +2,44 @@
 <html>
 
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Eflyer</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
 
-    <title>INSPINIA | Login </title>
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.min.css')}}">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/style.css')}}">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
+    <!-- fevicon -->
+    <link rel="icon" href="{{asset('frontend/images/fevicon.png')}}" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{{asset('frontend/css/jquery.mCustomScrollbar.min.css')}}">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  -->
+    <!-- owl stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}">
+    <link rel="stylesoeet" href="{{asset('frontend/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('font-awesome/css/font-awesome.css')}}" rel="stylesheet">
@@ -19,31 +52,36 @@
 </head>
 
 <body class="gray-bg">
+<div class="container">
+    <div class="header_section_top">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="custom_menu">
+                    <ul>
+                        <li><a href="#">Best Sellers</a></li>
+                        <li><a href="#">Gift Ideas</a></li>
+                        <li><a href="#">New Releases</a></li>
+                        <li><a href="#">Today's Deals</a></li>
+                        <li><a href="#">Customer Service</a></li>
+                        @if(!Auth::check())
+                            <li><a href="{{route('index')}}">Login</a></li>
+                        @else
+                            <li><a href="{{route('logout')}}">Logout</a></li>
+                        @endif
+                        @if(Auth::check() && Auth::user()->role==1)
+                            <li><a href="{{route('dashboard.index')}}">Admin</a></li>
+                        @endif
 
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="loginColumns animated fadeInDown">
     <div class="row">
-
-        <div class="col-md-6">
-            <h2 class="font-bold">Welcome to IN+</h2>
-
-            <p>
-                Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
-            </p>
-
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-            </p>
-
-            <p>
-                When an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-
-            <p>
-                <small>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</small>
-            </p>
-
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-10">
             <div class="ibox-content">
                 <form class="m-t" role="form" method="post" action="{{route('login')}}">
                     @csrf
@@ -61,30 +99,21 @@
                         @endif                    </div>
                     <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
 
-                    <a href="#">
+                    <a href="{{route('forget-password')}}">
                         <small>Forgot password?</small>
                     </a>
 
                     <p class="text-muted text-center">
                         <small>Do not have an account?</small>
                     </p>
-                    <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
+                    <a class="btn btn-sm btn-white btn-block" href="{{route('register.index')}}">Create an account</a>
                 </form>
-                <p class="m-t">
-                    <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small>
-                </p>
+
             </div>
         </div>
     </div>
     <hr/>
-    <div class="row">
-        <div class="col-md-6">
-            Copyright Example Company
-        </div>
-        <div class="col-md-6 text-right">
-            <small>© 2014-2015</small>
-        </div>
-    </div>
+
 </div>
 
 </body>

@@ -4020,7 +4020,7 @@ var SVGGraphics = (function SVGGraphicsClosure() {
       this.clippath.appendChild(clipElement);
       this.defs.appendChild(this.clippath);
 
-      // Create a new group with that attribute
+      // Create a new group with that attributecatalogue
       current.pendingClip = true;
       this.cgrp = document.createElementNS(NS, 'svg:g');
       this.cgrp.setAttributeNS(null, 'clip-path',
@@ -5454,8 +5454,8 @@ var WebGLUtils = (function WebGLUtilsClosure() {
   }
 
   var smaskVertexShaderCode = '\
-  attribute vec2 a_position;                                    \
-  attribute vec2 a_texCoord;                                    \
+  attributecatalogue vec2 a_position;                                    \
+  attributecatalogue vec2 a_texCoord;                                    \
                                                                 \
   uniform vec2 u_resolution;                                    \
                                                                 \
@@ -5603,8 +5603,8 @@ var WebGLUtils = (function WebGLUtilsClosure() {
   }
 
   var figuresVertexShaderCode = '\
-  attribute vec2 a_position;                                    \
-  attribute vec3 a_color;                                       \
+  attributecatalogue vec2 a_position;                                    \
+  attributecatalogue vec3 a_color;                                       \
                                                                 \
   uniform vec2 u_resolution;                                    \
   uniform vec2 u_scale;                                         \
@@ -10781,7 +10781,7 @@ exports._UnsupportedManager = _UnsupportedManager;
                         true : PDFJS.disableWebGL);
 
   /**
-   * Specifies the |target| attribute for external links.
+   * Specifies the |target| attributecatalogue for external links.
    * The constants from PDFJS.LinkTarget should be used:
    *  - NONE [default]
    *  - SELF
@@ -10794,7 +10794,7 @@ exports._UnsupportedManager = _UnsupportedManager;
                               LinkTarget.NONE : PDFJS.externalLinkTarget);
 
   /**
-   * Specifies the |rel| attribute for external links. Defaults to stripping
+   * Specifies the |rel| attributecatalogue for external links. Defaults to stripping
    * the referrer.
    * @var {string}
    */

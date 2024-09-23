@@ -409,7 +409,7 @@ CodeMirror.defineMode("clike", function(config, parserConfig) {
                     "mat2 mat3 mat4 " +
                     "sampler1D sampler2D sampler3D samplerCube " +
                     "sampler1DShadow sampler2DShadow" +
-                    "const attribute uniform varying " +
+                    "const attributecatalogue uniform varying " +
                     "break continue discard return " +
                     "for while do if else struct " +
                     "in out inout"),

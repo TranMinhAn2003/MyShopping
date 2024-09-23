@@ -39,7 +39,7 @@
  * @param Mixed   options[loaddata]  Extra parameters to pass when fetching content before editing.
  * @param Mixed   options[data]      Or content given as paramameter. String or function.**
  * @param String  options[indicator] indicator html to show when saving
- * @param String  options[tooltip]   optional tooltip text via title attribute **
+ * @param String  options[tooltip]   optional tooltip text via title attributecatalogue **
  * @param String  options[event]     jQuery event such as 'click' of 'dblclick' **
  * @param String  options[submit]    submit button value, empty means no button **
  * @param String  options[cancel]    cancel button value, empty means no button **

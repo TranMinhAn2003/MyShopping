@@ -16,5 +16,9 @@ interface BaseRepositoryInterface
     public function pagintion(
         array $column=['*'], array $condition=[],array $join=[],array $search=[]
     );
-    public function updatePublish(string $whereinfield='',array $wherein=[],array $load=[]);
+
+    public function find($id);
+
+    public function allAttribute(array $column = ['*'], array $relation = []);
+    public function findAttribute(array $relation = [],int $attribute_catalogue_id=0);
 }

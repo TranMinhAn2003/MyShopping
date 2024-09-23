@@ -11,8 +11,6 @@
             @include('dashboard.layout.navbar')
         </div>
         @include($template)
-        @include('dashboard.layout.footer')
-
     </div>
 </div>
 @include('dashboard.layout.right_sidebar')

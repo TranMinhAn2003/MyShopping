@@ -25427,7 +25427,7 @@ var Parser = (function ParserClosure() {
       // get length
       var length = dict.get('Length');
       if (!isInt(length)) {
-        info('Bad ' + length + ' attribute in stream');
+        info('Bad ' + length + ' attributecatalogue in stream');
         length = 0;
       }
 
@@ -38459,7 +38459,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
       } else {
         encoding = (properties.type === 'TrueType' ?
                     WinAnsiEncoding : StandardEncoding);
-        // The Symbolic attribute can be misused for regular fonts
+        // The Symbolic attributecatalogue can be misused for regular fonts
         // Heuristic: we have to check if the font is a standard one also
         if (!!(properties.flags & FontFlags.Symbolic)) {
           encoding = MacRomanEncoding;
@@ -38778,7 +38778,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
     },
 
     isSerifFont: function PartialEvaluator_isSerifFont(baseFontName) {
-      // Simulating descriptor flags attribute
+      // Simulating descriptor flags attributecatalogue
       var fontNameWoStyle = baseFontName.split('-')[0];
       return (fontNameWoStyle in getSerifFonts()) ||
               (fontNameWoStyle.search(/serif/gi) !== -1);
@@ -38946,7 +38946,7 @@ var PartialEvaluator = (function PartialEvaluatorClosure() {
           baseFontName = baseFontName.name.replace(/[,_]/g, '-');
           var metrics = this.getBaseFontMetrics(baseFontName);
 
-          // Simulating descriptor flags attribute
+          // Simulating descriptor flags attributecatalogue
           var fontNameWoStyle = baseFontName.split('-')[0];
           var flags =
             (this.isSerifFont(fontNameWoStyle) ? FontFlags.Serif : 0) |

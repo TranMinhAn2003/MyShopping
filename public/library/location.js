@@ -17,7 +17,7 @@
     }
     HT.sendData = (option) =>{
         $.ajax({
-            url: 'ajax/location/getLocation',
+            url: 'user/ajax/location/getLocation',
             type: 'GET',
             data: option,
             datatype: 'json',
@@ -38,7 +38,6 @@
     HT.load =()=>{
         if(province_id !== ''){
             $(".province").val(province_id).trigger('change');
-
         }
     }
 

@@ -30,9 +30,9 @@ class UserService  implements UserServiceInterface
     public function paginate($request)
     {
         $condition['keyword']=addslashes($request->input('keyword'));
-        $condition['user_agent'] = $request->input('user_agent');
+        $condition['role'] = $request->input('role');
 
-        if ($condition['user_agent'] !== null) {
+        if ($condition['role'] !== null) {
             switch ($condition['user_agent']) {
                 case '1':
                     $condition['user_agent'] = 'Quản trị viên';

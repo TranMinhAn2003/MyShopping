@@ -53,9 +53,9 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-row">
-                                    <label for="" class="control-label text-right">Nhóm thành viên <span class="text-danger">(*)</span></label>
+                                    <label for="" class="control-label text-right">Nhóm người dùng <span class="text-danger">(*)</span></label>
                                 </div>
-                                <select name="user_agent"  class="form-control" >
+                                <select name="role"  class="form-control" >
                                     <?php
                                     $user_agent=[
                                         '[Chọn nhóm thành viên]',
@@ -133,6 +133,25 @@
                                     <label for="" class="control-label text-right">Địa chỉ  <span class="text-danger">(*)</span></label>
                                     <input type="text" name="address"  class="form-control" value="{{old('address')}}">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row mb10 mr10">
+                            <div class="col-lg-6">
+                                <div class="form-row">
+                                    <label for="" class="control-label text-right ">Nhóm người dùng<span class="text-danger">(*)</span></label>
+                                </div>
+                                <select name="role"  class="form-control setupSelect2  ">
+                                    <option value="">[Chọn nhóm]</option>
+                                    <?php
+                                    $roles=['User','Admin']
+                                    ?>
+                                    @foreach($roles as $key => $val)
+                                        <option value="{{ $key }}" >
+                                            {{ $val }}
+                                        </option>
+                                    @endforeach
+
+                                </select>
                             </div>
                         </div>
 

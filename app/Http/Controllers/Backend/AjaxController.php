@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
-use App\Services\Interfaces\UserServiceInterface as UserService;
 
 
 class AjaxController extends Controller

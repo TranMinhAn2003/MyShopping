@@ -41,13 +41,15 @@ class BaseRepository implements BaseRepositoryInterface
          }
          return $query->paginate(8)->withQueryString()->withPath(env('APP_URL').$search['path']);
     }
+
     public function create(array $load=[]){
         $model= $this->model->create($load);
         return $model->fresh();
     }
-    public function updatePublish(string $whereinfield='',array $wherein=[],array $load=[])
+    public function find($id)
     {
-        return $this->model->whereIn($whereinfield,$wherein)->update($load);
+        $model=$this->model->find($id);
+        return $model;
     }
     public function update(int $id,array $load=[])
     {
@@ -63,8 +65,16 @@ class BaseRepository implements BaseRepositoryInterface
     {
         return $this->model->all();
     }
+
+    public function allAttribute( array $column = ['*'], array $relation = [])
+    {
+        return $this->model->select($column)->with($relation)->get();
+    }
     public function findById(int $modelId, array $column = ['*'], array $relation = [])
     {
         return $this->model->select($column)->with($relation)->findOrFail($modelId);
+    }
+    public function findAttribute(array $relation = [],int $attribute_catalogue_id=0){
+        return $this->model->with($relation)->where('attribute_catalogue_id',$attribute_catalogue_id)->get();
     }
 }

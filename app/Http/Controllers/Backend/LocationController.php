@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
-use Illuminate\Http\Request;
 use App\Repositories\Interfaces\DistrictRepositoryInterface as DistrictRepository;
 use App\Repositories\Interfaces\ProvinceRepositoryInterface as ProvinceRepository;
+use Illuminate\Http\Request;
 
 class LocationController extends Controller
 {

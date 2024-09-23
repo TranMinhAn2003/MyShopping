@@ -59,7 +59,7 @@
                             <th class="text-center">Địa chỉ</th>
                             <th class="text-center">Số điện thoại</th>
                             <th class="text-center">Giới tính</th>
-                            <th class="text-center ">Tình trạng</th>
+                            <th class="text-center ">Nhóm người dùng</th>
                             <th class="text-center" colspan="2">Thao tác</th>
                         </tr>
                         </thead>
@@ -73,16 +73,18 @@
                                 <td class="text-center address_user">{{$use->address}}</td>
                                 <td class="text-center">{{$use->phone}}</td>
                                 <td class="text-center">{{$use->gender}}</td>
-                                <td class="text-center js-switch-{{$use->id}}"           >
-                                    <input type="checkbox" value="{{$use->publish}}" class="js-switch status " data-field="publish" data-model="User" {{($use->publish==1) ? 'checked':''}} data-modelId="{{$use->id}}"/>
-                                </td>
+                                <td class="text-center" > {{ $use->role == 0 ? 'User' : 'Admin' }}</td>
                                 <td class="text-center ">
                                     <a href="{{route('user.edit',$use->id)}}" class=" btn btn-success btnedit "><i class="fa fa-edit"></i></a>
                                 </td>
 
-                                <td class="text-center ">
-                                    <a href="{{route('user.delete',$use->id)}}" class=" btn btn-danger btnedit "><i class="fa fa-trash"></i></a>
-                                </td>
+                                    <form action="{{route('user.destroy',$use->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <td class="text-center ">
+                                            <button type="submit" class=" btn btn-danger btnedit " onclick=" return confirm('Bạn có muốn xóa không ?')" ><i class="fa fa-trash"></i></button>
+                                        </td>
+                                    </form>
                             </tr>
                        @endforeach
                         </tbody>

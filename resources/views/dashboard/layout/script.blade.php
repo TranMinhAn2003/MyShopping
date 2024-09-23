@@ -15,21 +15,6 @@
 @endforeach
 @endif
 
-<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-<script src="/path/to/ckfinder/ckfinder.js"></script>
-
-<script>
-    CKEDITOR.replace('editor', {
-        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
-        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
-        filebrowserFlashBrowseUrl: '/ckfinder/ckfinder.html?type=Flash',
-        filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-        filebrowserFlashUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
-    });
-</script>
-
-
 {{--<script>--}}
 {{--    $(document).ready(function () {--}}
 

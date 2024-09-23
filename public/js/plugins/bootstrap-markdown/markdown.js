@@ -698,7 +698,7 @@
                 if ( !block.match(re) )
                     return undefined;
 
-                // make an attribute node if it doesn't exist
+                // make an attributecatalogue node if it doesn't exist
                 if ( !extract_attr( this.tree ) ) {
                     this.tree.splice( 1, 0, {} );
                 }
@@ -1132,7 +1132,7 @@
                     attr['class'] = meta[ i ].substring( 1 );
                 }
             }
-            // attribute: foo=bar
+            // attributecatalogue: foo=bar
             else if ( /\=/.test( meta[ i ] ) ) {
                 var s = meta[ i ].split( /\=/ );
                 attr[ s[ 0 ] ] = s[ 1 ];
@@ -1185,7 +1185,7 @@
         // document_meta blocks consist of one or more lines of `Key: Value\n`
         if ( ! block.match( /^(?:\w+:.*\n)*\w+:.*$/ ) ) return undefined;
 
-        // make an attribute node if it doesn't exist
+        // make an attributecatalogue node if it doesn't exist
         if ( !extract_attr( this.tree ) ) {
             this.tree.splice( 1, 0, {} );
         }
@@ -1221,7 +1221,7 @@
             // if the node is a string (rather than JsonML), bail
             if ( typeof node === "string" ) return undefined;
 
-            // create the attribute hash if it doesn't exist
+            // create the attributecatalogue hash if it doesn't exist
             if ( !hash ) {
                 hash = {};
                 node.splice( 1, 0, hash );
@@ -1511,7 +1511,7 @@
             case "link_ref":
                 jsonml[ 0 ] = "a";
 
-                // grab this ref and clean up the attribute node
+                // grab this ref and clean up the attributecatalogue node
                 var ref = references[ attrs.ref ];
 
                 // if the reference exists, make the link
@@ -1535,7 +1535,7 @@
             case "img_ref":
                 jsonml[ 0 ] = "img";
 
-                // grab this ref and clean up the attribute node
+                // grab this ref and clean up the attributecatalogue node
                 var ref = references[ attrs.ref ];
 
                 // if the reference exists, make the link
@@ -1561,7 +1561,7 @@
         // convert all the children
         i = 1;
 
-        // deal with the attribute node, if it exists
+        // deal with the attributecatalogue node, if it exists
         if ( attrs ) {
             // if there are keys, skip over it
             for ( var key in jsonml[ 1 ] ) {
@@ -1583,7 +1583,7 @@
 
 // merges adjacent text nodes into a single node
     function merge_text_nodes( jsonml ) {
-        // skip the tag name and attribute hash
+        // skip the tag name and attributecatalogue hash
         var i = extract_attr( jsonml ) ? 2 : 1;
 
         while ( i < jsonml.length ) {

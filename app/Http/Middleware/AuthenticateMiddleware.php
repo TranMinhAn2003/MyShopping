@@ -16,9 +16,13 @@ class AuthenticateMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::id()==null){
-            return redirect()->route('index')->with('error','Bạn phải đăng nhập để sử dụng chức năng này');
+        if (Auth::check() && Auth::user()->role == '1') {
+            return $next($request);
         }
-        return $next($request);
+
+        // Chuyển hướng nếu không phải admin
+        flash()->error('Bạn không phải là admin nên không có quyền truy cập trang này');
+        return redirect()->route('home.index');
+
     }
 }

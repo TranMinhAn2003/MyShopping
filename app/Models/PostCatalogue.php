@@ -9,11 +9,11 @@ class PostCatalogue extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'parent_id',
-        'left','right',
-        'level',
-        'image',
-        'publish',
-        'album','order'
-    ];
+    'parent_id',
+    'left','right',
+    'level',
+    'image',
+    'publish',
+    'album','order'
+];
 }
